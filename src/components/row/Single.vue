@@ -9,6 +9,7 @@
         :is="content.component"
         :content="content"
         :key="content.id"
+        @contentmouseover="hoverRowActive = false"
     ></component>
   </div>
 </template>

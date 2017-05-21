@@ -122,7 +122,6 @@ export default {
   float: left;
   width: 70%;
   border: 1px solid blue;
-  padding: 10px 30px;
 }
 
 .palette-container {
@@ -132,6 +131,10 @@ export default {
   padding: 15px;
 }
 
+.row-item {
+  padding: 10px 15px;
+}
+
 .row-item:after {
   content: "";
   display: table;
@@ -139,6 +142,10 @@ export default {
 }
 
 .row-item-hover {
-  outline: 3px solid blue;
+  outline: 2px solid blue;
+}
+
+.content-item-hover {
+  outline: 2px solid lightseagreen;
 }
 </style>
