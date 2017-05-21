@@ -1,5 +1,7 @@
 <template lang="html">
-
+  <div>
+    editing row
+  </div>
 </template>
 
 <script>

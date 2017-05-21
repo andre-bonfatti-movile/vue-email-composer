@@ -29,7 +29,7 @@
 
 <script>
 import Palette from './components/Palette.vue';
-import RowEditor from './components/RowEditor.vue';
+import RowEditor from './components/editor/RowEditor.vue';
 
 import SingleRow from './components/row/Single.vue';
 import DoubleRow from './components/row/Double.vue';

@@ -4,21 +4,17 @@
       @mouseleave="hoverRowActive = false"
       :class="{'row-item-hover': hoverRowActive}"
   >
-    <component
+    <app-content-wrapper
         v-for="content in row.columns[0].contentList"
-        :is="content.component"
         :content="content"
         :key="content.id"
         @contentmouseover="hoverRowActive = false"
-    ></component>
+    ></app-content-wrapper>
   </div>
 </template>
 
 <script>
-import EmptyContent from '../content/Empty.vue'
-import ImageContent from '../content/Image.vue'
-import SocialContent from '../content/Social.vue'
-import TextContent from '../content/Text.vue'
+import ContentWrapper from '../content/ContentWrapper.vue';
 
 export default {
   props: ['row'],
@@ -28,10 +24,7 @@ export default {
     };
   },
   components: {
-    appEmptyContent: EmptyContent,
-    appImageContent: ImageContent,
-    appTextContent: TextContent,
-    appSocialContent: SocialContent
+    appContentWrapper: ContentWrapper
   }
 }
 </script>

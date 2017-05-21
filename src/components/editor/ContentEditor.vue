@@ -1,9 +1,12 @@
 <template lang="html">
-  <div>*insert image here*</div>
+  <div>
+    editing content
+  </div>
 </template>
 
 <script>
-export default {}
+export default {
+}
 </script>
 
 <style lang="css">
