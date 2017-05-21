@@ -1,8 +1,16 @@
 <template>
   <div id="app">
     <div class="row-container">
-      <div v-for="row in rows" class="row-item">
-        <component :is="row.component" :row="row" @click.native="selectRow(row.id)"></component>
+      <div >
+        <component
+            v-for="row in rows"
+            class="row-item"
+            :key="row.id"
+            :is="row.component"
+            :row="row"
+            @click.native="selectRow(row.id)"
+        >
+        </component>
       </div>
     </div>
     <div class="palette-container">
@@ -20,7 +28,6 @@
 </template>
 
 <script>
-import TemplateStructure from './components/TemplateStructure.vue';
 import Palette from './components/Palette.vue';
 import RowEditor from './components/RowEditor.vue';
 
@@ -42,31 +49,35 @@ export default {
         {
           id: 1,
           component: 'app-single-row',
-          column1: {
-            contentList: [
-              { component: 'app-image-content', properties: { } },
-              { component: 'app-image-content', properties: { } }
-            ],
-            properties: { }
-          }
+          columns: [
+            {
+              contentList: [
+                { id: 10, component: 'app-image-content', properties: { } },
+                { id: 11, component: 'app-image-content', properties: { } }
+              ],
+              properties: { }
+            }
+          ]
         },
 
         // single row format example
         {
           id: 2,
           component: 'app-double-row',
-          column1: {
-            contentList: [
-              { component: 'app-image-content', properties: { } }
-            ],
-            properties: { }
-          },
-          column2: {
-            contentList: [
-              { component: 'app-image-content', properties: { } }
-            ],
-            properties: { }
-          }
+          columns: [
+            {
+              contentList: [
+                { id: 12, component: 'app-image-content', properties: { } }
+              ],
+              properties: { }
+            },
+            {
+              contentList: [
+                { id: 13, component: 'app-image-content', properties: { } }
+              ],
+              properties: { }
+            }
+          ]
         }
 
       ],
@@ -76,7 +87,6 @@ export default {
     }
   },
   components: {
-    appStructure: TemplateStructure,
     appPalette: Palette,
     appRowEditor: RowEditor,
     appSingleRow: SingleRow,
@@ -124,11 +134,11 @@ export default {
 
 .row-item:after {
   content: "";
-  clear: both;
   display: table;
+  clear: both;
 }
 
-.row-item:hover {
+.row-item-hover {
   outline: 3px solid blue;
 }
 </style>

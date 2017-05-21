@@ -1,8 +1,15 @@
 <template lang="html">
-  <div :style="row.properties">
-    <div v-for="content in row.column1.contentList">
-      <component :is="content.component" :content="content"></component>
-    </div>
+  <div :style="row.properties"
+      @mouseover="hoverRowActive = true"
+      @mouseleave="hoverRowActive = false"
+      :class="{'row-item-hover': hoverRowActive}"
+  >
+    <component
+        v-for="content in row.columns[0].contentList"
+        :is="content.component"
+        :content="content"
+        :key="content.id"
+    ></component>
   </div>
 </template>
 
@@ -14,6 +21,11 @@ import TextContent from '../content/Text.vue'
 
 export default {
   props: ['row'],
+  data() {
+    return {
+      hoverRowActive: false
+    };
+  },
   components: {
     appEmptyContent: EmptyContent,
     appImageContent: ImageContent,
