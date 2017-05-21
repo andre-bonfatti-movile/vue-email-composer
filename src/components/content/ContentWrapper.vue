@@ -3,15 +3,18 @@
       :is="content.component"
       @mouseover.native.stop="mouseOverActive"
       @mouseleave.native="isHoverActive = false"
+      @click.native.stop="contentSelected"
       :class="{'content-item-hover': isHoverActive}"
   ></component>
 </template>
 
 <script>
-import EmptyContent from '../content/Empty.vue'
-import ImageContent from '../content/Image.vue'
-import SocialContent from '../content/Social.vue'
-import TextContent from '../content/Text.vue'
+import EmptyContent from '../content/Empty.vue';
+import ImageContent from '../content/Image.vue';
+import SocialContent from '../content/Social.vue';
+import TextContent from '../content/Text.vue';
+
+import { bus } from '../../main';
 
 export default {
   props: ['content'],
@@ -29,8 +32,10 @@ export default {
   methods: {
     mouseOverActive() {
       this.isHoverActive = true;
-      console.log('ops');
       this.$emit('contentmouseover');
+    },
+    contentSelected() {
+      bus.$emit('content-selected', this.content)
     }
   }
 }

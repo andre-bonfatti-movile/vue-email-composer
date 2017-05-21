@@ -19,10 +19,11 @@
         <button @click="selectPalette('app-structure')">Structure</button>
         <button @click="selectPalette('app-body')">Body</button>
       </div>
+      <!-- show editor if row or content selected -->
+      <app-row-editor v-if="selectedRow" :component="selectedRow"></app-row-editor>
+      <app-content-editor v-else-if="selectedContent" :component="selectedContent"></app-content-editor>
       <!-- show components palette -->
-      <app-palette v-if="!selectedRow" :selectedPalette="selectedPalette"></app-palette>
-      <!-- or editor if row or content selected -->
-      <app-row-editor v-else :component="selectedRow"></app-row-editor>
+      <app-palette v-else :selectedPalette="selectedPalette"></app-palette>
     </div>
   </div>
 </template>
@@ -30,57 +31,19 @@
 <script>
 import Palette from './components/Palette.vue';
 import RowEditor from './components/editor/RowEditor.vue';
+import ContentEditor from './components/editor/ContentEditor.vue';
 
 import SingleRow from './components/row/Single.vue';
 import DoubleRow from './components/row/Double.vue';
+
+import { data } from './initial_data';
+import { bus } from './main';
 
 export default {
   name: 'app',
   data() {
     return {
-      /*
-        structure: {
-          componentName: 'app-double-structure',
-        }
-      */
-      rows: [
-
-        // single row format example
-        {
-          id: 1,
-          component: 'app-single-row',
-          columns: [
-            {
-              contentList: [
-                { id: 10, component: 'app-image-content', properties: { } },
-                { id: 11, component: 'app-image-content', properties: { } }
-              ],
-              properties: { }
-            }
-          ]
-        },
-
-        // single row format example
-        {
-          id: 2,
-          component: 'app-double-row',
-          columns: [
-            {
-              contentList: [
-                { id: 12, component: 'app-image-content', properties: { } }
-              ],
-              properties: { }
-            },
-            {
-              contentList: [
-                { id: 13, component: 'app-image-content', properties: { } }
-              ],
-              properties: { }
-            }
-          ]
-        }
-
-      ],
+      rows: data.rows,
       selectedPalette: 'app-content',
       selectedRow: null,
       selectedContent: null
@@ -89,6 +52,7 @@ export default {
   components: {
     appPalette: Palette,
     appRowEditor: RowEditor,
+    appContentEditor: ContentEditor,
     appSingleRow: SingleRow,
     appDoubleRow: DoubleRow
   },
@@ -103,12 +67,25 @@ export default {
   },
   methods: {
     selectRow(rowId) {
+      this.clearSelectables();
       this.selectedRow = this.rows.filter(r => r.id === rowId)[0];
     },
     selectPalette(paletteComponentName) {
-      this.selectedRow = null;
+      this.clearSelectables();
       this.selectedPalette = paletteComponentName;
+    },
+    clearSelectables() {
+      this.selectedRow = null;
+      this.selectedPalette = null;
+      this.selectedContent = null;
     }
+  },
+  created() {
+    bus.$on('content-selected', (content) => {
+      this.selectedRow = null;
+      this.selectedPalette = null;
+      this.selectedContent = content;
+    })
   }
 }
 </script>
