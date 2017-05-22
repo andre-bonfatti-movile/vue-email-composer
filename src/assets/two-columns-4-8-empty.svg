@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="320px" height="55px" viewBox="0 0 320 55" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.2 (12043) - http://www.bohemiancoding.com/sketch -->
+    <title>two-columns-text + Rectangle 79 + Rectangle 80 + Rectangle 79 + Rectangle 80 Copy</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="two-columns-text-+-Rectangle-79-+-Rectangle-80-+-Rectangle-79-+-Rectangle-80-Copy" sketch:type="MSLayerGroup" transform="translate(160.000000, 27.500000) scale(-1, 1) translate(-160.000000, -27.500000) ">
+            <g id="two-columns-text" fill="#E0E0E0" sketch:type="MSShapeGroup">
+                <g id="Rows">
+                    <g id="Group">
+                        <rect id="Rectangle-61" x="212" y="0" width="108" height="55"></rect>
+                        <rect id="Rectangle-61" x="0" y="0" width="204" height="55"></rect>
+                    </g>
+                </g>
+            </g>
+            <g id="Rectangle-79-+-Rectangle-80" transform="translate(18.000000, 13.000000)" sketch:type="MSShapeGroup">
+                <rect id="Rectangle-79" stroke="#BDBDBD" stroke-linejoin="round" stroke-dasharray="2" fill="#D3D3D3" x="0" y="0" width="168" height="29"></rect>
+                <rect id="Rectangle-80" fill="#CCCCCC" x="0.591549296" y="1" width="166.816901" height="2"></rect>
+            </g>
+            <g id="Rectangle-79-+-Rectangle-80" transform="translate(228.000000, 13.000000)" sketch:type="MSShapeGroup">
+                <rect id="Rectangle-79" stroke="#BDBDBD" stroke-linejoin="round" stroke-dasharray="2" fill="#D3D3D3" x="0" y="0" width="74" height="29"></rect>
+                <rect id="Rectangle-80" fill="#CCCCCC" x="0.26056338" y="1" width="73.4788732" height="2"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,29 +1,22 @@
 <template lang="html">
-  <div class="structures-preview-container">
-    <div class="single">
+  <div>
+    <div class="structure-row">
+      <div style="background-image:url(./src/assets/one-column-empty.svg)"></div>
     </div>
-    <div class="double">
-      <span class="left">&nbsp;</span>
-      <span class="right">&nbsp;</span>
+    <div class="structure-row">
+      <div style="background-image:url(./src/assets/two-columns-empty.svg)"></div>
     </div>
-    <div class="double-left">
-      <span class="left">&nbsp;</span>
-      <span class="right">&nbsp;</span>
+    <div class="structure-row">
+      <div style="background-image:url(./src/assets/two-columns-4-8-empty.svg)"></div>
     </div>
-    <div class="double-right">
-      <span class="left">&nbsp;</span>
-      <span class="right">&nbsp;</span>
+    <div class="structure-row">
+      <div style="background-image:url(./src/assets/two-columns-8-4-empty.svg)"></div>
     </div>
-    <div class="triple">
-      <span>&nbsp;</span>
-      <span>&nbsp;</span>
-      <span>&nbsp;</span>
+    <div class="structure-row">
+      <div style="background-image:url(./src/assets/three-columns-empty.svg)"></div>
     </div>
-    <div class="quadruple">
-      <span>&nbsp;</span>
-      <span>&nbsp;</span>
-      <span>&nbsp;</span>
-      <span>&nbsp;</span>
+    <div class="structure-row">
+      <div style="background-image:url(./src/assets/four-columns-empty.svg)"></div>
     </div>
   </div>
 </template>
@@ -40,65 +33,20 @@ export default {
 
 <style lang="css" scoped>
 
-.structures-preview-container div {
-  margin-bottom: 1em;
+.structure-row > div{
+  background-repeat: no-repeat;
+  background-size: 100%;
   height: 50px;
-  width: 100%;
-  border: 1px solid green;
 }
 
-.structures-preview-container span {
-  height: 100%;
-  display: inline-block;
+.structure-row {
+  padding: 1em;
+  margin-bottom: .5em;
 }
 
-.double .left {
-  width: 50%;
-  border-right: 1px solid green;
-}
-
-.double .right {
-  width: 50%;
-}
-
-.double-left .left {
-  width: 66.6%;
-  border-right: 1px solid green;
-}
-.double-left .right {
-  width: 33.3%;
-}
-
-.double-right .left {
-  width: 33.3%;
-  border-right: 1px solid green;
-}
-
-.double-right .right {
-  width: 66.6%;
-}
-
-.triple span {
-  width: 33.3%;
-  border-right: 1px solid green;
-}
-
-.triple span:last-child {
-  border-right: 0px;
-}
-
-.quadruple span {
-  width: 25%;
-  border-right: 1px solid green;
-}
-
-.quadruple span:last-child {
-  border-right: 0px;
-}
-
-.structures-preview-container > div:hover {
-  box-shadow: 0px 4px 7px #AAA;
+.structure-row:hover {
   cursor: move;
+  box-shadow: 0px 3px 8px #AAA;
 }
 
 </style>
