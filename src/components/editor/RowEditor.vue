@@ -64,12 +64,12 @@ export default {
       }
     },
     column3Padding() {
-      if (this.row.column2) {
+      if (this.row.column3) {
         return parseInt(this.row.column3.properties.padding) || 0;
       }
     },
     column4Padding() {
-      if (this.row.column2) {
+      if (this.row.column4) {
         return parseInt(this.row.column4.properties.padding) || 0;
       }
     },
