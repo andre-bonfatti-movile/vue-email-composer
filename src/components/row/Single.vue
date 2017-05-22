@@ -5,13 +5,15 @@
       :class="{'row-item-hover': hoverRowActive}"
       :style="row.rowProperties"
   >
-    <div :style="row.column1.properties">
-      <app-content-wrapper
-          v-for="content in row.column1.contentList"
-          :content="content"
-          :key="content.id"
-          @contentmouseover="hoverRowActive = false"
-      ></app-content-wrapper>
+    <div :style="row.contentProperties">
+      <div :style="row.column1.properties">
+        <app-content-wrapper
+            v-for="content in row.column1.contentList"
+            :content="content"
+            :key="content.id"
+            @contentmouseover="hoverRowActive = false"
+        ></app-content-wrapper>
+      </div>
     </div>
 
   </div>

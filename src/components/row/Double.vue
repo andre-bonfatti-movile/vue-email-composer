@@ -1,25 +1,27 @@
 <template lang="html">
-  <div 
+  <div
       @mouseover="hoverRowActive = true"
       @mouseleave="hoverRowActive = false"
       :class="{'row-item-hover': hoverRowActive}"
       :style="row.rowProperties"
   >
-    <div class="left">
-      <app-content-wrapper
-          v-for="content in row.column1.contentList"
-          :content="content"
-          :key="content.id"
-          @contentmouseover="hoverRowActive = false"
-      ></app-content-wrapper>
-    </div>
-    <div class="right">
-      <app-content-wrapper
-          v-for="content in row.column2.contentList"
-          :content="content"
-          :key="content.id"
-          @contentmouseover="hoverRowActive = false"
-      ></app-content-wrapper>
+    <div :style="row.contentProperties" class="clearfix">
+      <div class="left" :style="row.column1.properties">
+        <app-content-wrapper
+            v-for="content in row.column1.contentList"
+            :content="content"
+            :key="content.id"
+            @contentmouseover="hoverRowActive = false"
+        ></app-content-wrapper>
+      </div>
+      <div class="right" :style="row.column2.properties">
+        <app-content-wrapper
+            v-for="content in row.column2.contentList"
+            :content="content"
+            :key="content.id"
+            @contentmouseover="hoverRowActive = false"
+        ></app-content-wrapper>
+      </div>
     </div>
   </div>
 </template>

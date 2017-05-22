@@ -6,6 +6,7 @@ export const data = {
       id: 1,
       component: 'app-single-row',
       rowProperties: {},
+      contentProperties: {},
       column1: {
         contentList: [
           { id: 10, component: 'app-empty-content', properties: { } },
@@ -20,6 +21,7 @@ export const data = {
       id: 2,
       component: 'app-double-row',
       rowProperties: {},
+      contentProperties: {},
       column1: {
         contentList: [
           { id: 12, component: 'app-image-content', properties: { } }

@@ -6,8 +6,8 @@
       <div>Padding</div>
       <input
           type="number"
-          :value="rowPadding"
-          @input="updateRowPadding"
+          :value="column1Padding"
+          @input="updateRowPadding($event, 'column1')"
           :class="{'invalid-input': invalidPadding}"
       >
     </div>
@@ -20,6 +20,18 @@
     <div class="clearfix" style="margin-top: 20px">
       <div>Content Background Color</div>
       <input type="text" :value="rowBgColor" @input="updateRowBgColor">
+    </div>
+
+    <div v-if="row.column2">
+      <div class="clearfix" style="margin-top: 20px">
+        <div>Padding</div>
+        <input
+            type="number"
+            :value="column2Padding"
+            @input="updateRowPadding($event, 'column2')"
+            :class="{'invalid-input': invalidPadding}"
+        >
+      </div>
     </div>
 
     <!--
@@ -43,22 +55,37 @@ export default {
     };
   },
   computed: {
-    rowPadding() {
+    column1Padding() {
       return parseInt(this.row.column1.properties.padding) || 0;
+    },
+    column2Padding() {
+      if (this.row.column2) {
+        return parseInt(this.row.column2.properties.padding) || 0;
+      }
+    },
+    column3Padding() {
+      if (this.row.column2) {
+        return parseInt(this.row.column3.properties.padding) || 0;
+      }
+    },
+    column4Padding() {
+      if (this.row.column2) {
+        return parseInt(this.row.column4.properties.padding) || 0;
+      }
     },
     fullRowBgColor() {
       return this.row.rowProperties.backgroundColor || '';
     },
     rowBgColor() {
-      return this.row.column1.properties.backgroundColor || '';
+      return this.row.contentProperties.backgroundColor || '';
     }
   },
   methods: {
-    updateRowPadding(evt) {
+    updateRowPadding(evt, columnAlias) {
       // https://vuejs.org/v2/guide/reactivity.html#Change-Detection-Caveats
       if (evt.target.value && parseInt(evt.target.value) && parseInt(evt.target.value) < 50 && parseInt(evt.target.value) >= 0) {
         this.invalidPadding = false;
-        this.$set(this.row.column1.properties, 'padding', evt.target.value + 'px');
+        this.$set(this.row[columnAlias].properties, 'padding', evt.target.value + 'px');
       } else {
         this.invalidPadding = true;
       }
@@ -67,7 +94,7 @@ export default {
       this.$set(this.row.rowProperties, 'backgroundColor', evt.target.value);
     },
     updateRowBgColor(evt) {
-      this.$set(this.row.column1.properties, 'backgroundColor', evt.target.value);
+      this.$set(this.row.contentProperties, 'backgroundColor', evt.target.value);
     }
   },
   components: {
