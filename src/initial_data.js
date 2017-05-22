@@ -5,35 +5,33 @@ export const data = {
     {
       id: 1,
       component: 'app-single-row',
-      columns: [
-        {
-          contentList: [
-            { id: 10, component: 'app-empty-content', properties: { } },
-            { id: 11, component: 'app-empty-content', properties: { } }
-          ],
-          properties: { }
-        }
-      ]
+      rowProperties: {},
+      column1: {
+        contentList: [
+          { id: 10, component: 'app-empty-content', properties: { } },
+          { id: 11, component: 'app-empty-content', properties: { } }
+        ],
+        properties: { }
+      }
     },
 
-    // single row format example
+    // double row format example
     {
       id: 2,
       component: 'app-double-row',
-      columns: [
-        {
-          contentList: [
-            { id: 12, component: 'app-image-content', properties: { } }
-          ],
-          properties: { }
-        },
-        {
-          contentList: [
-            { id: 13, component: 'app-image-content', properties: { } }
-          ],
-          properties: { }
-        }
-      ]
+      rowProperties: {},
+      column1: {
+        contentList: [
+          { id: 12, component: 'app-image-content', properties: { } }
+        ],
+        properties: { }
+      },
+      column2: {
+        contentList: [
+          { id: 13, component: 'app-image-content', properties: { } }
+        ],
+        properties: { }
+      }
     }
 
   ]

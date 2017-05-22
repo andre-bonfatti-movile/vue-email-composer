@@ -1,12 +1,13 @@
 <template lang="html">
-  <div :style="row.properties"
+  <div 
       @mouseover="hoverRowActive = true"
       @mouseleave="hoverRowActive = false"
       :class="{'row-item-hover': hoverRowActive}"
+      :style="row.rowProperties"
   >
     <div class="left">
       <app-content-wrapper
-          v-for="content in row.columns[0].contentList"
+          v-for="content in row.column1.contentList"
           :content="content"
           :key="content.id"
           @contentmouseover="hoverRowActive = false"
@@ -14,7 +15,7 @@
     </div>
     <div class="right">
       <app-content-wrapper
-          v-for="content in row.columns[1].contentList"
+          v-for="content in row.column2.contentList"
           :content="content"
           :key="content.id"
           @contentmouseover="hoverRowActive = false"

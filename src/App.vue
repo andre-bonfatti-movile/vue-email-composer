@@ -27,7 +27,6 @@
         <app-palette v-else :selectedPalette="selectedPalette"></app-palette>
       </div>
     </div>
-    {{ rows }}
   </div>
 </template>
 
@@ -168,6 +167,10 @@ html, body {
 
 .palette__options-container {
   padding: 1em;
+}
+
+.invalid-input {
+  outline: 2px solid lightcoral;
 }
 
 </style>

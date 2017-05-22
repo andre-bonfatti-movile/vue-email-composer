@@ -9,12 +9,11 @@
 <script>
 export default {
   props: {
-    increment: {
+    step: {
       type: Number,
       default: 1
     },
     initialValue: {
-      type: Number,
       default: 0
     },
     min: {
@@ -28,17 +27,17 @@ export default {
   },
   data() {
     return {
-      value: this.initialValue
+      value: parseInt(this.initialValue)
     };
   },
   methods: {
     doDecrement() {
-      this.value = Math.max(this.value - this.increment, this.min)
-      this.$emit('updated', this.value);
+      this.value = Math.max(this.value - this.step, this.min)
+      this.$emit('input', this.value + 'px');
     },
     doIncrement() {
-      this.value = Math.min(this.value + this.increment, this.max)
-      this.$emit('updated', this.value);
+      this.value = Math.min(this.value + this.step, this.max)
+      this.$emit('input', this.value + 'px');
     }
   }
 }
