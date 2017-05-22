@@ -3,7 +3,7 @@
       :is="content.component"
       @mouseover.native.stop="mouseOverActive"
       @mouseleave.native="isHoverActive = false"
-      @click.native.stop="contentSelected"
+      @click.native="contentSelected"
       :class="{'content-item-hover': isHoverActive}"
   ></component>
 </template>
@@ -31,11 +31,16 @@ export default {
   },
   methods: {
     mouseOverActive() {
-      this.isHoverActive = true;
-      this.$emit('contentmouseover');
+      if (this.content.component !== 'app-empty-content') {
+        this.isHoverActive = true;
+        this.$emit('contentmouseover');
+      }
     },
-    contentSelected() {
-      bus.$emit('content-selected', this.content)
+    contentSelected(evt) {
+      if (this.content.component !== 'app-empty-content') {
+        bus.$emit('content-selected', this.content);
+        evt.stopPropagation();
+      }
     }
   }
 }

@@ -111,11 +111,12 @@ html, body {
 
 .row-container {
   width: calc(100% - 350px);
-  padding: 1em;
+  padding: 15px;
 }
 
 .row-item {
   padding: 10px 15px;
+  padding: 0em 15%;
 }
 
 .clearfix:after {
