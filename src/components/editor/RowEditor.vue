@@ -14,12 +14,12 @@
 
     <div class="clearfix" style="margin-top: 20px">
       <div>Row Background Color</div>
-      <input type="text" :value="fullRowBgColor" @input="updateFullRowBgColor">
+      <input type="text" :value="rowBgColor" @input="updateFullRowBgColor">
     </div>
 
     <div class="clearfix" style="margin-top: 20px">
       <div>Content Background Color</div>
-      <input type="text" :value="rowBgColor" @input="updateRowBgColor">
+      <input type="text" :value="contentBgColor" @input="updateRowBgColor">
     </div>
 
     <div v-if="row.column2">
@@ -73,10 +73,10 @@ export default {
         return parseInt(this.row.column4.properties.padding) || 0;
       }
     },
-    fullRowBgColor() {
+    rowBgColor() {
       return this.row.rowProperties.backgroundColor || '';
     },
-    rowBgColor() {
+    contentBgColor() {
       return this.row.contentProperties.backgroundColor || '';
     }
   },
