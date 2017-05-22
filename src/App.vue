@@ -21,12 +21,13 @@
       </div>
       <div class="palette__options-container">
         <!-- show editor if row or content selected -->
-        <app-row-editor v-if="selectedRow" :component="selectedRow"></app-row-editor>
+        <app-row-editor v-if="selectedRow" :row="selectedRow"></app-row-editor>
         <app-content-editor v-else-if="selectedContent" :component="selectedContent"></app-content-editor>
         <!-- show components palette -->
         <app-palette v-else :selectedPalette="selectedPalette"></app-palette>
       </div>
     </div>
+    {{ rows }}
   </div>
 </template>
 
@@ -58,15 +59,6 @@ export default {
     appSingleRow: SingleRow,
     appDoubleRow: DoubleRow
   },
-  computed: {
-    editorComponentName() {
-      if (!selectedRow && !selectedContent) {
-        return false;
-      } else {
-        return selectedRow;
-      }
-    }
-  },
   methods: {
     selectRow(rowId) {
       this.clearSelectables();
@@ -87,7 +79,7 @@ export default {
       this.selectedRow = null;
       this.selectedPalette = null;
       this.selectedContent = content;
-    })
+    });
   }
 }
 </script>
