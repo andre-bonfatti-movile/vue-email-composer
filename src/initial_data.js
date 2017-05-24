@@ -6,7 +6,7 @@ export const data = {
       id: 1,
       component: 'app-single-row',
       rowProperties: {},
-      contentProperties: {},
+      contentProperties: { backgroundColor: 'red', padding: '20px' },
       column1: {
         contentList: [
           { id: 10, component: 'app-empty-content', properties: { } }
