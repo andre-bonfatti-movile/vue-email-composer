@@ -9,8 +9,7 @@ export const data = {
       contentProperties: {},
       column1: {
         contentList: [
-          { id: 10, component: 'app-empty-content', properties: { } },
-          { id: 11, component: 'app-empty-content', properties: { } }
+          { id: 10, component: 'app-empty-content', properties: { } }
         ],
         properties: { }
       }
