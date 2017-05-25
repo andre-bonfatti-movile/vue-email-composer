@@ -17,12 +17,12 @@
 
     <div class="clearfix" style="margin-top: 20px">
       <div>Row Background Color</div>
-      <input type="text" :value="rowBgColor" @input="updateFullRowBgColor">
+      <chrome-picker :value="rowBgColor" @input="updateFullRowBgColor"/>
     </div>
 
     <div class="clearfix" style="margin-top: 20px">
       <div>Content Background Color</div>
-      <input type="text" :value="contentBgColor" @input="updateRowBgColor">
+      <chrome-picker :value="contentBgColor" @input="updateRowBgColor"/>
     </div>
 
     <div v-if="row.column2">
@@ -49,12 +49,15 @@
 
 <script>
 import NumberPicker from '../form/NumberPicker.vue';
+import { Sketch } from 'vue-color';
 
 export default {
   props: ['row'],
   data() {
     return {
-      invalidPadding: false
+      invalidPadding: false,
+      colors1: defaultProps(),
+      colors2: defaultProps()
     };
   },
   computed: {
@@ -94,15 +97,26 @@ export default {
       }
     },
     updateFullRowBgColor(evt) {
-      this.$set(this.row.rowProperties, 'backgroundColor', evt.target.value);
+      const rgba = evt.rgba;
+      this.$set(this.row.rowProperties, 'backgroundColor',
+        `rgba(${rgba.r}, ${rgba.g}, ${rgba.b}, ${rgba.a})`);
     },
     updateRowBgColor(evt) {
-      this.$set(this.row.contentProperties, 'backgroundColor', evt.target.value);
+      const rgba = evt.rgba;
+      this.$set(this.row.contentProperties, 'backgroundColor',
+        `rgba(${rgba.r}, ${rgba.g}, ${rgba.b}, ${rgba.a})`);
     }
   },
   components: {
-    appNumberPicker: NumberPicker
+    // appNumberPicker: NumberPicker,
+    chromePicker: Sketch
   }
+}
+
+function defaultProps() {
+  return {
+    hex: '#194d33'
+  };
 }
 </script>
 
