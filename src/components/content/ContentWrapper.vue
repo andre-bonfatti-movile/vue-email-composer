@@ -4,6 +4,7 @@
       @mouseover.native.stop="mouseOverActive"
       @mouseleave.native="isHoverActive = false"
       @click.native="contentSelected"
+      :content="content"
       :class="{'content-item-hover': isHoverActive}"
   ></component>
 </template>

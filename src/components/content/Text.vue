@@ -1,22 +1,32 @@
 <template lang="html">
-  <div
-      @mouseover.stop="mouseOverActive"
-      @mouseleave="isHoverActive = false"
-      :class="{'content-item-hover': isHoverActive}"
-  >*insert image here*</div>
+  <div :style="content.style">
+    <medium-editor
+        :text="content.html"
+        :options="{}"
+        custom-tag="p"
+        v-on:edit="applyTextEdit"
+        style="margin: 0;"
+    >
+    </medium-editor>
+  </div>
 </template>
 
 <script>
+import editor from 'vue2-medium-editor';
+
 export default {
+  props: ['content'],
   data() {
     return {
-      isHoverActive: false
+      text: "<b>Your</b> title here!"
     };
   },
+  components: {
+    'medium-editor': editor
+  },
   methods: {
-    mouseOverActive() {
-      this.isHoverActive = true;
-      this.$emit('contentmouseover');
+    applyTextEdit(html) {
+      this.content.html = html;
     }
   }
 }

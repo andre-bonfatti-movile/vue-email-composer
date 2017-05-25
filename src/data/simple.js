@@ -9,9 +9,22 @@ export const data = {
       contentProperties: { },
       column1: {
         contentList: [
-          { id: 10, component: 'app-empty-content', properties: { } }
+          { id: 10, component: 'app-text-content', style: { color: '#FAFAFA', textAlign: 'center' }, html: '<h2>Your title <i>here</i>!</h2>' }
         ],
         properties: { padding: '20px' }
+      }
+    },
+
+    {
+      id: 3,
+      component: 'app-single-row',
+      rowProperties: { backgroundColor: '#61626F' },
+      contentProperties: { backgroundColor: '' },
+      column1: {
+        contentList: [
+          { id: 12, component: 'app-image-content', properties: { } }
+        ],
+        properties: { }
       }
     },
 
@@ -22,27 +35,7 @@ export const data = {
       contentProperties: { padding: '40px' },
       column1: {
         contentList: [
-          { id: 11, component: 'app-empty-content', properties: { } }
-        ],
-        properties: { }
-      }
-    },
-
-    // double row format example
-    {
-      id: 3,
-      component: 'app-double-row',
-      rowProperties: { backgroundColor: '#61626F' },
-      contentProperties: { backgroundColor: '', padding: '20px' },
-      column1: {
-        contentList: [
-          { id: 12, component: 'app-image-content', properties: { } }
-        ],
-        properties: { }
-      },
-      column2: {
-        contentList: [
-          { id: 13, component: 'app-image-content', properties: { } }
+          { id: 11, component: 'app-text-content', style: { color: 'white', lineHeight: '1.5em', fontSize: '18px' }, html: 'Your text here.<br/><h2>Try selecting this text to edit it :-)</h2>If you feel uncomfy about something, try pressing <u>CTRL+Z</u> or <u>CMD+Z</u>' }
         ],
         properties: { }
       }
