@@ -4,41 +4,44 @@ export const data = {
     // single row format example
     {
       id: 1,
-      component: 'app-single-row',
       rowProperties: { backgroundColor: '#2C2D37' },
-      contentProperties: { },
-      column1: {
+      contentProperties: { backgroundColor: '' },
+      columns: [{
         contentList: [
-          { id: 10, component: 'app-text-content', style: { color: '#FAFAFA', textAlign: 'center' }, html: '<h2>Your title <i>here</i>!</h2>' }
+          { id: 10, component: 'app-text-content', style: { color: '#FAFAFA', textAlign: 'center' }, html: '<h1 style="font-size:3em;">Your title <i>here</i>!</h1>' }
         ],
         properties: { padding: '20px' }
-      }
+      }]
     },
 
     {
       id: 3,
-      component: 'app-single-row',
       rowProperties: { backgroundColor: '#61626F' },
       contentProperties: { backgroundColor: '' },
-      column1: {
-        contentList: [
-          { id: 12, component: 'app-image-content', properties: { } }
-        ],
-        properties: { }
-      }
+      columns: [
+        {
+          contentList: [
+            { id: 12, component: 'app-image-content', properties: { } }
+          ],
+          properties: { padding: '50px 40px' }
+        }
+      ]
     },
 
     {
       id: 2,
-      component: 'app-single-row',
       rowProperties: { backgroundColor: '#323341' },
-      contentProperties: { padding: '40px' },
-      column1: {
+      contentProperties: { padding: '40px', backgroundColor: '' },
+      columns: [{
         contentList: [
-          { id: 11, component: 'app-text-content', style: { color: 'white', lineHeight: '1.5em', fontSize: '18px' }, html: 'Your text here.<br/><h2>Try selecting this text to edit it :-)</h2>If you feel uncomfy about something, try pressing <u>CTRL+Z</u> or <u>CMD+Z</u>' }
+          {
+            id: 11, component: 'app-text-content',
+            style: { color: 'white', lineHeight: '1.5em', fontSize: '18px' },
+            html: 'Your text here.<br/><h2>Try selecting this text to edit it :-)</h2>If you feel uncomfy about something, try pressing <b><u>CTRL+Z</u></b> or <b><u>CMD+Z</u></b>'
+          }
         ],
         properties: { }
-      }
+      }]
     }
 
   ]

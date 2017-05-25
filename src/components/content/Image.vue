@@ -1,11 +1,11 @@
 <template lang="html">
   <div>
     <form class="will-not-export">
-      <label for="upload">
+      <label :for="`upload-${content.id}`">
         <img src="src/assets/image-placeholder.png" style="width: 100%;" alt="" :id="`content-${content.id}`">
         <input
             type="file"
-            id="upload"
+            :id="`upload-${content.id}`"
             style="display:none"
             accept="image/x-png,image/gif,image/jpeg"
             @change="changeImageFile($event, content.id)">
