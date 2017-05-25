@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <div class="row-container">
-      <div >
+    <div class="row-container" style="position:relative;width:calc(100% - 350px);padding:15px;">
+      <div>
         <component
             v-for="row in rows"
             class="row-item clearfix"
@@ -95,14 +95,9 @@ html, body {
   margin: 0;
 }
 
-#app {
-  position: relative;
-  height: 100%;
-}
-
 .row-container {
-  width: calc(100% - 350px);
-  padding: 15px;
+
+
 }
 
 .row-item {
@@ -122,6 +117,7 @@ html, body {
 
 .content-item-hover {
   outline: 2px solid lightseagreen;
+  outline-offset: 5px;
 }
 
 .palette-container {
@@ -171,6 +167,10 @@ html, body {
 
 .invalid-input {
   outline: 2px solid lightcoral;
+}
+
+.medium-editor-element:focus {
+  outline: 0px !important;
 }
 
 </style>
