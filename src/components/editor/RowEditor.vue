@@ -1,7 +1,10 @@
 <template lang="html">
   <div>
-    <h4 style="margin-top: 0;">Row properties</h4>
+    <h4 style="margin: 0;">Row properties</h4>
+    <hr>
 
+    <h4 style="margin: 0;">Content properties</h4>
+    <hr>
     <div class="clearfix" style="margin-top: 20px">
       <div>Padding</div>
       <input

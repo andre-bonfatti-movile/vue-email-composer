@@ -38,7 +38,7 @@ import ContentEditor from './components/editor/ContentEditor.vue';
 import SingleRow from './components/row/Single.vue';
 import DoubleRow from './components/row/Double.vue';
 
-import { data } from './initial_data';
+import { data } from './data/simple';
 import { bus } from './main';
 
 export default {
