@@ -1,5 +1,7 @@
 <template lang="html">
   <div
+      @mouseover="hoverRowActive = true"
+      @mouseleave="hoverRowActive = false"
       :class="{'row-item-hover': hoverRowActive}"
       :style="row.rowProperties"
   >

@@ -95,13 +95,7 @@ html, body {
   margin: 0;
 }
 
-.row-container {
-
-
-}
-
 .row-item {
-  padding: 10px 15px;
   padding: 0em 15%;
 }
 
@@ -112,11 +106,13 @@ html, body {
 }
 
 .row-item-hover {
-  outline: 2px solid blue;
+  outline: 4px solid #e74c3c;
+  cursor: pointer;
+  outline-offset: -3px;
 }
 
 .content-item-hover {
-  outline: 2px solid lightseagreen;
+  outline: 3px solid #2ecc71;
   outline-offset: 5px;
 }
 
